@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captador Automático de Chuva</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #status { font-size: 20px; margin-top: 20px; }
+        .container { margin-top: 50px; }
+        .button { padding: 10px 20px; background: green; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Captador Automático de Chuva</h1>
+    <div class="container">
+        <p id="status">Monitorando condições climáticas...</p>
+        <button class="button" onclick="verificarChuva()">Simular Chuva</button>
+    </div>
+
+    <script>
+        function verificarChuva() {
+            let chuva = Math.random() > 0.5; // Simulando detecção de chuva
+            let statusElemento = document.getElementById("status");
+
+            if (chuva) {
+                statusElemento.textContent = "Chuva detectada! Captador ativado.";
+                statusElemento.style.color = "blue";
+            } else {
+                statusElemento.textContent = "Sem chuva detectada.";
+                statusElemento.style.color = "black";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
